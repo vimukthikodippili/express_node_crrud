@@ -26,7 +26,7 @@ const signUp=(req,res)=>{
 
 }
 const login=(req,resp)=> {
-    UserSchema.findOne({email: req.body.email}).then(existsUser => {
+    UsertSchema.findOne({email: req.body.email}).then(existsUser => {
         if (existsUser != null) {
 
             bcrypt.compare(req.body.password, existsUser.password, function (err, result) {
